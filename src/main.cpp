@@ -36,8 +36,8 @@ inline bool isNonCharacter(int ch)
 
 std::string shuffled(std::vector<std::string> &shuffledPieces)
 {
-    std::random_device rd;
-    std::mt19937 g(rd());
+    static std::random_device rd;
+    static std::mt19937 g(rd());
     static constexpr size_t minCharacters{4};
 
     for (auto &str : shuffledPieces)
